@@ -139,11 +139,12 @@ class CredentialProvider
                 }
             }
         }
-
+        
+        $params = array_values($defaultChain);
         return self::memoize(
             call_user_func_array(
                 'self::chain',
-                array_values($defaultChain)
+                array_values($params)
             )
         );
     }
